@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Scrollbar Hide Utility */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Swiper Hero Banner Custom Dots Styling */
+.hero-swiper .swiper-pagination {
+  bottom: 0px !important;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.3;
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #f97316 !important; /* CRAVEX Orange Theme */
+  opacity: 1;
+  width: 24px;
+  border-radius: 999px;
+}
+/* Swiper Custom Pagination Dots styling for Mobile/Desktop */
+.hero-swiper .swiper-pagination {
+  bottom: 0px !important;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.3;
+  width: 7px;
+  height: 7px;
+  transition: all 0.3s ease;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #f97316 !important;
+  opacity: 1;
+  width: 20px;
+  border-radius: 999px;
+}
