@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: './', // اس سے تمام CSS/JS کا پاتھ ٹھیک رہے گا
-  css: {
-    transformer: 'postcss', // LightningCSS ایرر سے بچنے کے لیے
-  }
+  plugins: [
+    react(),
+    tailwindcss(), // Tailwind v4 کا آفیشل پلگ ان
+  ],
+  base: './', // Relative paths تاکہ gh-pages پر 404 نہ آئے
 })
