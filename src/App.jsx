@@ -13,7 +13,12 @@ import SpinWheelModal from './components/SpinWheelModal';
 import { OrderTracker } from './components/OrderTracker';
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  // 1. Dark Mode کو LocalStorage سے ریڈ کریں تاکہ ریفریش پر یاد رہے
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('cravex_theme');
+    return savedTheme ? savedTheme === 'dark' : true;
+  });
+
   const [selectedItem, setSelectedItem] = useState(null);
 
   // Modals Open/Close States
@@ -23,6 +28,11 @@ export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const { activeCategory, setCategory, searchQuery, favorites, toggleFavorite } = useFoodStore();
+
+  // 2. جب بھی Dark Mode بدلے، اسے LocalStorage میں سیو کریں
+  useEffect(() => {
+    localStorage.setItem('cravex_theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
 
   // Scroll to Top visibility listener
   useEffect(() => {

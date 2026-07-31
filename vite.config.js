@@ -1,11 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(), // Tailwind v4 کا آفیشل پلگ ان
-  ],
-  base: './', // Relative paths تاکہ gh-pages پر 404 نہ آئے
+  plugins: [react()],
+  base: './', // GitHub Pages کے پاتھ کا مسئلہ فکس کرنے کے لیے
 })
